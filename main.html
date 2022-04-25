@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function getdata(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState==4 && xhttp.status==200){
+                    var j= JSON.parse(xhttp.response);
+                    document.getElementById('div1').innerHTML=j.name;
+                }
+            };
+            xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
+                xhttp.send();
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome.css">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" class="js-color-style" href="color.css">
+    <title>Todo</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-main d-flex justify-content-between align-items-centre">
+                    <div class="header-logo">
+                        <a href="main.html"><span>TO</span>DO</a>
+                        <section class="section-title d-flex justify-content-between align-items-centre">
+                            <h2 class="title">ToDoList</h2>
+                        </section>
+                    </div>
+                    <div type="button" class="header-hamburger-btn js-header-menu-toggler">
+                        <span></span>
+                    </div>
+                    <div class="header-backdrop js-header-backdrop"></div>
+                    <nav class="header-menu js-header-menu">
+                        <div class="button" class="header-close-btn js-header-menu-toggler">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <ul class="menu"> 
+                                               
+                            <li class="menu-item menu-item-has-children">
+                                <li class="menu-item"><a href="main.html">Todo List</a></li>
+                                
+                           </li>
+                           <li class="menu-item"><a href="index.html">Log Out</a></li>
+                        </ul>
+                        
+                        <script src="bootstrap.bundle.min.js"></script>
+    
+    <input type="button" name="name" onclick="getdata()" value="Click"> 
+<div id="div1"></div>
+</body>
+                           
+</html>
