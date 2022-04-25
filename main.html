@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        function getdata(){
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function(){
-                if(xhttp.readyState==4 && xhttp.status==200){
-                    var j= JSON.parse(xhttp.response);
-                    document.getElementById('div1').innerHTML=j.name;
-                }
-            };
-            xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
-                xhttp.send();
-        }
-    </script>
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -32,7 +19,11 @@
                         <a href="main.html"><span>TO</span>DO</a>
                         <section class="section-title d-flex justify-content-between align-items-centre">
                             <h2 class="title">ToDoList</h2>
+                            <br>
+                           
                         </section>
+                        <input type="button" name="name" onclick="getdata()" value="Click"> 
+                        <div id="div1"></div>
                     </div>
                     <div type="button" class="header-hamburger-btn js-header-menu-toggler">
                         <span></span>
@@ -52,9 +43,9 @@
                         </ul>
                         
                         <script src="bootstrap.bundle.min.js"></script>
+                        <script src="todo.js"></script>
     
-    <input type="button" name="name" onclick="getdata()" value="Click"> 
-<div id="div1"></div>
+   
 </body>
                            
 </html>
